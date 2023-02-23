@@ -1,2 +1,2 @@
 # adivina-numero
-proyecto adivinar numero
+juego de adivinar numero
