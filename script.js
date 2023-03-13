@@ -1,12 +1,12 @@
 //Seleccionar los elementos del Dom y guardarlos en variables
 const scoreField = document.querySelector('.score')
-const highScoreField = document.querySelector('.hightscore')
+const highScoreField = document.querySelector('.highscore')
 const numberField = document.querySelector('.number')
 const message = document.querySelector('.message')
 const checkButton = document.querySelector('.check')
 const guessField = document.querySelector('.guess')
 const againButton = document.querySelector('.again')
-const bodyField=document.querySelector('.body')
+const bodyField=document.querySelector('body')
 
 
 console.log(
@@ -63,7 +63,7 @@ checkButton.addEventListener('click', fnCheckButtom)
     }else{
       const mensaje =
       
-      number > secretNumber ? 'El numero es mayor' : 'El numero es menor'
+      number > secretNumber ? 'El numero es menor' : 'El numero es mayor'
       mostrarMensaje(mensaje)
       score--
       scoreField.textContent=score
@@ -82,11 +82,16 @@ function fnInitApp(){
 
   score=20
   scoreField.textContent = score
+
   guessField.value = ''
+  highScore= Number(localStorage.getItem('highscore')) || 0
+  highScoreField.textContent=highScore
+
+
   secretNumber = Math.trunc(Math.random() * MAX_NUMBER) + MIN_NUMBER
   console.log(`El número secreto es ${secretNumber}`)
   mostrarMensaje('Empieza a adivinar...')
-  bodyField.style.backgroundColor = '#fff'
+  bodyField.style.backgroundColor = 'purple'
   numberField.textContent = '?'
 
 
